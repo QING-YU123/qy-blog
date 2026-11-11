@@ -22,6 +22,8 @@ export default {
     editPage: "Edit page",
     previousPost: "Previous Post",
     nextPost: "Next Post",
+    copyCode: "Copy",
+    codeCopied: "Copied",
   },
   pagination: {
     prev: "Prev",
@@ -29,6 +31,9 @@ export default {
     page: "Page",
   },
   home: {
+    greeting: "Welcome to Dasein",
+    emptyPosts:
+      "Learning notes and projects will appear here as they are published.",
     socialLinks: "Social Links",
     featured: "Featured",
     recentPosts: "Recent Posts",
@@ -53,6 +58,9 @@ export default {
 
     searchTitle: "Search",
     searchDesc: "Search any article ...",
+    emptyPosts: "No posts yet. Check back soon.",
+    emptyTags: "Tags will appear here once posts are published.",
+    emptyArchives: "Published posts will be archived here by date.",
   },
   a11y: {
     skipToContent: "Skip to content",
@@ -64,6 +72,18 @@ export default {
     noResults: "No results found",
     goToPreviousPage: "Go to previous page",
     goToNextPage: "Go to next page",
+    rssFeed: "Subscribe via RSS",
+    breadcrumb: "Breadcrumb",
+    pagination: "Pagination",
+    switchToLight: "Switch to light mode",
+    switchToDark: "Switch to dark mode",
+    searchDevNotice:
+      "Build the site to refresh the search index during development.",
+    zoomImage: "Zoom image",
+    imagePreview: "Image preview",
+    closeImagePreview: "Close image preview",
+    socialProfile: "Visit {{author}} on {{platform}}",
+    emailAuthor: "Send an email to {{author}}",
   },
   notFound: {
     title: "404 Not Found",

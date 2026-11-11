@@ -7,6 +7,9 @@
 !/.github
 !tsconfig.json
 !astro.config.ts
+!astro-paper.config.ts
+!copy-pagefind.mjs
+!clean-pagefind.mjs
 !package.json
 !.prettierrc
 !eslint.config.js

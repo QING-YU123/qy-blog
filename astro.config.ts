@@ -24,6 +24,7 @@ import config from "./astro-paper.config";
 
 export default defineConfig({
   site: config.site.url,
+  base: "/qy-blog",
   integrations: [
     mdx(),
     sitemap({
@@ -33,8 +34,8 @@ export default defineConfig({
     inlineTocDeprecation(),
   ],
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ["zh"],
+    defaultLocale: "zh",
     routing: {
       prefixDefaultLocale: false,
     },
@@ -68,13 +69,35 @@ export default defineConfig({
   },
   fonts: [
     {
-      name: "Google Sans Code",
-      cssVariable: "--font-google-sans-code",
-      provider: fontProviders.google(),
-      fallbacks: ["monospace"],
-      weights: [300, 400, 500, 600, 700],
-      styles: ["normal", "italic"],
-      formats: ["woff", "ttf"],
+      name: "LXGW WenKai",
+      cssVariable: "--font-lxgw-wenkai",
+      provider: fontProviders.local(),
+      display: "swap",
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/LXGWWenKai-Regular.woff2"],
+            weight: 400,
+            style: "normal",
+          },
+        ],
+      },
+      fallbacks: ["serif"],
+    },
+    {
+      name: "Noto Sans SC",
+      cssVariable: "--font-noto-sans-sc",
+      provider: fontProviders.local(),
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/NotoSansSC-Regular.ttf"],
+            weight: 400,
+            style: "normal",
+          },
+        ],
+      },
+      fallbacks: ["sans-serif"],
     },
   ],
   env: {

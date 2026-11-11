@@ -16,6 +16,9 @@ import BackToTopButton from "./_components/BackToTopButton.astro";
 import AdjacentPostNav from "./_components/AdjacentPostNav.astro";
 import PostToc from "./_components/PostToc.astro";
 import config from "@/config";
+import { useTranslations } from "@/i18n";
+
+const t = useTranslations(Astro.currentLocale);
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -141,6 +144,13 @@ const ogImage = ogImageUrl
       <PostToc headings={tocHeadings} />
       <article
         id="article"
+        data-ui={JSON.stringify({
+          copyCode: t.post.copyCode,
+          codeCopied: t.post.codeCopied,
+          zoomImage: t.a11y.zoomImage,
+          imagePreview: t.a11y.imagePreview,
+          closeImagePreview: t.a11y.closeImagePreview,
+        })}
         class:list={[
           "w-full",
           "app-prose max-w-app",
@@ -231,7 +241,8 @@ const ogImage = ogImageUrl
   addHeadingLinks();
 
   function attachCopyButtons() {
-    const copyButtonLabel = "Copy";
+    const labels = JSON.parse(document.getElementById("article").dataset.ui);
+    const copyButtonLabel = labels.copyCode;
     const codeBlocks = Array.from(document.querySelectorAll("pre"));
 
     for (const codeBlock of codeBlocks) {
@@ -248,7 +259,7 @@ const ogImage = ogImageUrl
 
       const copyButton = document.createElement("button");
       copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
-      copyButton.innerHTML = copyButtonLabel;
+      copyButton.textContent = copyButtonLabel;
       codeBlock.setAttribute("tabindex", "0");
       codeBlock.appendChild(copyButton);
 
@@ -266,7 +277,7 @@ const ogImage = ogImageUrl
 
       await navigator.clipboard.writeText(text ?? "");
 
-      button.innerText = "Copied";
+      button.innerText = labels.codeCopied;
 
       setTimeout(() => {
         button.innerText = copyButtonLabel;
@@ -279,6 +290,7 @@ const ogImage = ogImageUrl
   function initLightbox() {
     const article = document.getElementById("article");
     if (!article) return;
+    const labels = JSON.parse(article.dataset.ui);
 
     const prefersReducedMotion = () =>
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -298,7 +310,7 @@ const ogImage = ogImageUrl
         image.setAttribute("aria-haspopup", "dialog");
         image.setAttribute(
           "aria-label",
-          image.alt ? `Zoom image: ${image.alt}` : "Zoom image"
+          image.alt ? `${labels.zoomImage}：${image.alt}` : labels.zoomImage
         );
       }
     });
@@ -312,14 +324,14 @@ const ogImage = ogImageUrl
       overlay.setAttribute("aria-modal", "true");
       overlay.setAttribute(
         "aria-label",
-        alt ? `Image preview: ${alt}` : "Image preview"
+        alt ? `${labels.imagePreview}：${alt}` : labels.imagePreview
       );
       overlay.className =
         "fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-200 motion-reduce:transition-none";
 
       const closeButton = document.createElement("button");
       closeButton.type = "button";
-      closeButton.setAttribute("aria-label", "Close image preview");
+      closeButton.setAttribute("aria-label", labels.closeImagePreview);
       closeButton.className =
         "absolute end-4 top-4 z-1 flex size-11 items-center justify-center rounded bg-black/50 text-3xl leading-none text-white";
       closeButton.innerHTML = "&#10005;";

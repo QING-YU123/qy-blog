@@ -21,6 +21,8 @@ export interface UIStrings {
     editPage: string;
     previousPost: string;
     nextPost: string;
+    copyCode: string;
+    codeCopied: string;
   };
   pagination: {
     prev: string;
@@ -28,6 +30,8 @@ export interface UIStrings {
     page: string;
   };
   home: {
+    greeting: string;
+    emptyPosts: string;
     socialLinks: string;
     featured: string;
     recentPosts: string;
@@ -52,6 +56,9 @@ export interface UIStrings {
 
     searchTitle: string;
     searchDesc: string;
+    emptyPosts: string;
+    emptyTags: string;
+    emptyArchives: string;
   };
   a11y: {
     skipToContent: string;
@@ -64,6 +71,17 @@ export interface UIStrings {
     noResults: string;
     goToPreviousPage: string;
     goToNextPage: string;
+    rssFeed: string;
+    breadcrumb: string;
+    pagination: string;
+    switchToLight: string;
+    switchToDark: string;
+    searchDevNotice: string;
+    zoomImage: string;
+    imagePreview: string;
+    closeImagePreview: string;
+    socialProfile: string;
+    emailAuthor: string;
   };
   notFound: {
     title: string;

@@ -1,166 +1,72 @@
-# AstroPaper 📄
+# 此在（Dasein）
 
-![AstroPaper](public/default-og.jpg)
-[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/community/file/1356898632249991861)
-![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![GitHub](https://img.shields.io/github/license/satnaing/astro-paper?color=%232F3741&style=for-the-badge)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge)](https://conventionalcommits.org)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
+清余（QINGYU）的个人博客。深圳大学研究生在读。
 
-AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro blog theme. This theme is designed and crafted based on [my personal blog](https://satnaing.dev/blog).
+记录学习、思考与实践成果，也作为了解我、与我联系的窗口。
 
-Read [the blog posts](https://astro-paper.pages.dev/posts/) or check [the README Documentation Section](#-documentation) for more info.
+> A space to document my learning, reflections, and projects—and a window into who I am and how to reach me.
 
-## 🔥 Features
+- 网站地址：<https://qing-yu123.github.io/qy-blog/>
+- GitHub：<https://github.com/QING-YU123>
+- 公开邮箱：<shouxinyin03@gmail.com>
 
-- [x] type-safe markdown
-- [x] super fast performance
-- [x] accessible (Keyboard/VoiceOver)
-- [x] responsive (mobile ~ desktops)
-- [x] SEO-friendly
-- [x] light & dark mode
-- [x] static search ([Pagefind](https://pagefind.app/))
-- [x] draft posts & pagination
-- [x] sitemap & rss feed
-- [x] MDX support
-- [x] table of contents beside posts
-- [x] followed best practices
-- [x] highly customizable
-- [x] dynamic OG image generation for blog posts ([Blog Post](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/))
-- [x] i18n ready
+## 本地运行
 
-_Note: I've tested screen-reader accessibility of AstroPaper using **VoiceOver** on Mac and **TalkBack** on Android. I couldn't test all other screen-readers out there. However, accessibility enhancements in AstroPaper should be working fine on others as well._
+使用 Node.js 24 和 pnpm 11。
 
-## ✅ Lighthouse Score
-
-<p align="center">
-  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fastro-paper.pages.dev%2F&form_factor=desktop">
-    <img width="710" alt="AstroPaper Lighthouse Score" src="AstroPaper-lighthouse-score.svg">
-  </a>
-</p>
-
-## 🚀 Project Structure
-
-Inside of AstroPaper, you'll see the following folders and files:
-
-```bash
-/
-├── public/
-│   ├── pagefind/          # auto-generated on build
-│   ├── favicon.svg
-│   └── default-og.jpg
-├── src/
-│   ├── assets/
-│   │   ├── icons/
-│   │   └── images/
-│   ├── components/
-│   ├── content/
-│   │   ├── pages/
-│   │   │   └── about.md
-│   │   └── posts/
-│   │       └── some-blog-posts.md
-│   ├── i18n/
-│   ├── layouts/
-│   ├── pages/
-│   ├── scripts/
-│   ├── styles/
-│   ├── types/
-│   ├── utils/
-│   ├── config.ts
-│   └── content.config.ts
-├── astro-paper.config.ts  # user-defined configurations
-└── astro.config.ts
-```
-
-All blog posts are stored in the `src/content/posts/` directory. You can organise posts into subdirectories — the subdirectory name becomes part of the post URL.
-
-## 📖 Documentation
-
-Documentation can be read in two formats\_ _markdown_ & _blog post_.
-
-- Configuration - [markdown](src/content/posts/how-to-configure-astropaper-theme.md) | [blog post](https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/)
-- Add Posts - [markdown](src/content/posts/adding-new-post.md) | [blog post](https://astro-paper.pages.dev/posts/adding-new-posts-in-astropaper-theme/)
-- Customize Color Schemes - [markdown](src/content/posts/customizing-astropaper-theme-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/)
-- Predefined Color Schemes - [markdown](src/content/posts/predefined-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/predefined-color-schemes/)
-
-## 💻 Tech Stack
-
-**Main Framework** - [Astro](https://astro.build/)  
-**Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
-**Styling** - [TailwindCSS](https://tailwindcss.com/)  
-**UI/UX** - [Figma Design File](https://www.figma.com/community/file/1356898632249991861)  
-**Static Search** - [Pagefind](https://pagefind.app/)  
-**Icons** - [Tablers](https://tabler-icons.io/)  
-**Code Formatting** - [Prettier](https://prettier.io/)  
-**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  
-**Linting** - [ESLint](https://eslint.org)  
-**Dynamic OG images** - [Satori](https://github.com/vercel/satori) + [Sharp](https://sharp.pixelplumbing.com/) + [Astro Fonts](https://docs.astro.build/en/guides/fonts/)
-
-## 👨🏻‍💻 Running Locally
-
-You can start using this project locally by running the following command in your desired directory:
-
-```bash
-# pnpm
-pnpm create astro@latest --template satnaing/astro-paper
-
-# npm
-npm create astro@latest -- --template satnaing/astro-paper
-
-# yarn
-yarn create astro --template satnaing/astro-paper
-
-# bun
-bun create astro@latest -- --template satnaing/astro-paper
-```
-
-Then start the project by running the following commands:
-
-```bash
-# install dependencies if you haven't done so in the previous step.
+```sh
 pnpm install
-
-# start running the project
 pnpm dev
 ```
 
-## Google Site Verification (optional)
+开发地址为 <http://localhost:4321/qy-blog/>。首次使用搜索前，先执行 `pnpm build` 生成索引。
 
-You can add your [Google Site Verification HTML tag](https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag) by setting `site.googleVerification` in `astro-paper.config.ts`:
-
-```ts file="astro-paper.config.ts"
-export default defineAstroPaperConfig({
-  site: {
-    // ...
-    googleVerification: "your-google-site-verification-value",
-  },
-  // ...
-});
+```sh
+pnpm lint
+pnpm format:check
+pnpm build
+pnpm preview
 ```
 
-> See [this discussion](https://github.com/satnaing/astro-paper/discussions/334#discussioncomment-10139247) for adding AstroPaper to the Google Search Console.
+## 发布到 GitHub Pages
 
-## 🧞 Commands
+在 `QING-YU123/qy-blog` 仓库的 **Settings → Pages → Build and deployment** 中，将 Source 设置为 **GitHub Actions**。
 
-All commands are run from the root of the project, from a terminal:
+推送到 `main` 后，`.github/workflows/deploy.yml` 会执行检查、构建、生成中文搜索索引并部署 `dist/`。也可在 Actions 中手动运行部署。
 
-| Command          | Action                                                                                                                           |
-| :--------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| `pnpm install`   | Installs dependencies                                                                                                            |
-| `pnpm dev`       | Starts local dev server at `localhost:4321`                                                                                      |
-| `pnpm build`     | Type-checks, builds the site, runs Pagefind indexing, and copies the index to `public/pagefind/`                                 |
-| `pnpm preview`   | Preview your build locally, before deploying                                                                                     |
-| `pnpm sync`      | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
-| `pnpm astro ...` | Run CLI commands like `astro add`, `astro check`                                                                                 |
+站点域名在 `astro-paper.config.ts` 的 `site.url` 中配置，仓库路径在 `astro.config.ts` 的 `base: "/qy-blog"` 中配置。将来更换仓库名或独立域名时，需要同步调整这两个位置。
 
-## ✨ Feedback & Suggestions
+## 写文章
 
-If you have any suggestions/feedback, you can contact me via [my email](mailto:satnaingdev+astropaper@gmail.com). Alternatively, feel free to open an issue if you find bugs or want to request new features.
+在 `src/content/posts/` 中添加 Markdown 或 MDX 文件。例如，新建 `my-first-post.md`：
 
-## 📜 License
-
-Licensed under the MIT License, Copyright © 2026
-
+```yaml
 ---
+title: "我的第一篇文章"
+description: "文章简介"
+pubDatetime: 2026-11-11T10:00:00+08:00
+draft: false
+tags:
+  - 学习笔记
+---
+```
 
-Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
+在 frontmatter 后编写正文。`author` 可省略，默认使用“清余（QINGYU）”。`draft: true` 的文章不公开发布。未来日期的文章会在该日期之后的下一次构建中发布。
+
+原有演示文章已清理，文章列表、标签和归档会在发布内容后自动更新。
+
+## 配置和中文化
+
+- `astro-paper.config.ts`：站点名称、中英文简介、作者、联系方式和功能开关。
+- `src/content/pages/about.md`：关于我。
+- `src/i18n/lang/zh.ts`：中文界面；`en.ts` 保留英文翻译。
+- `astro.config.ts`：默认语言、部署路径和本地字体。
+- `public/favicon.svg`：站点图标。
+
+当前默认语言为中文。新增其他语言时，还需添加对应页面路由和内容筛选，修改语言列表本身不会生成翻译页面。
+
+网页默认使用本地霞鹜文楷（LXGW WenKai），通过 WOFF2 文件加载；字体加载期间先显示系统字体，加载完成后自动切换。分享封面在构建时使用随仓库提供的 Noto Sans SC 字体。两者均不依赖在线字体服务，来源、格式转换方式和许可见 `src/assets/fonts/README.md`。
+
+## 许可
+
+本站基于 AstroPaper 主题修改。原始 MIT 版权及许可声明保留在 [LICENSE](LICENSE) 中；霞鹜文楷和 Noto Sans SC 使用 SIL Open Font License。

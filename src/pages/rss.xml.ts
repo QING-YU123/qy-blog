@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import { getSortedPosts } from "@/utils/getSortedPosts";
 import { getPostUrl } from "@/utils/getPostPaths";
 import config from "@/config";
+import { getAssetPath } from "@/utils/withBase";
 
 export async function GET() {
   const posts = await getCollection("posts");
@@ -11,7 +12,8 @@ export async function GET() {
   return rss({
     title: config.site.title,
     description: config.site.description,
-    site: config.site.url,
+    site: new URL(getAssetPath(""), config.site.url).href,
+    customData: `<language>${config.site.lang}</language>`,
     items: sortedPosts.map(({ data, id, filePath }) => ({
       link: getPostUrl(id, filePath, config.site.lang),
       title: data.title,

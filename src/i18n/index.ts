@@ -1,4 +1,5 @@
 import type { UIStrings } from "./types";
+import config from "@/config";
 
 export { tplStr } from "./format";
 
@@ -18,7 +19,9 @@ type ResolvedStrings = { [K in keyof UIStrings]: Required<UIStrings[K]> };
  * Returns UI strings for the given locale, falling back to English. Labels that
  * are optional until v8 fall back one by one.
  */
-export function useTranslations(locale: string = "en"): ResolvedStrings {
+export function useTranslations(
+  locale: string = config.site.lang
+): ResolvedStrings {
   const t = translations[locale] ?? translations["en"];
   return {
     ...t,
